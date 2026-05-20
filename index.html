@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBEWEAR - Thời trang hiện đại</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        Miễn phí vận chuyển cho đơn hàng từ 499.000đ
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+
+                    <h1 class="logo">VIBEWEAR</h1>
+
+                    <nav class="nav-desktop">
+                        <a href="#home" class="nav-link">Trang chủ</a>
+                        <a href="#men" class="nav-link">Nam</a>
+                        <a href="#women" class="nav-link">Nữ</a>
+                        <a href="#accessories" class="nav-link">Phụ kiện</a>
+                        <a href="#collection" class="nav-link">Bộ sưu tập</a>
+                        <a href="#contact" class="nav-link">Liên hệ</a>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                    <div class="search-box">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm..." class="search-input">
+                    </div>
+
+                    <button class="icon-btn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+
+                    <button class="icon-btn cart-btn" id="cartBtn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="#home" class="nav-link">Trang chủ</a>
+                <a href="#men" class="nav-link">Nam</a>
+                <a href="#women" class="nav-link">Nữ</a>
+                <a href="#accessories" class="nav-link">Phụ kiện</a>
+                <a href="#collection" class="nav-link">Bộ sưu tập</a>
+                <a href="#contact" class="nav-link">Liên hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="https://images.unsplash.com/photo-1776273920158-510b171e936f?w=1200" alt="Hero" class="hero-image">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2 class="hero-title">Phong cách mới cho mỗi ngày</h2>
+                <p class="hero-subtitle">Khám phá bộ sưu tập thời trang hiện đại, tối giản và dễ phối đồ.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToProducts()">Mua ngay</button>
+                    <button class="btn btn-secondary" onclick="scrollToProducts()">Xem bộ sưu tập</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Danh mục sản phẩm</h2>
+            <div class="category-grid" id="categoryGrid"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Sản phẩm mới</h2>
+
+            <!-- Filters -->
+            <div class="filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <select id="genderFilter" class="filter-select">
+                            <option value="Tất cả">Tất cả</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Unisex">Unisex</option>
+                        </select>
+
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="Tất cả">Tất cả</option>
+                            <option value="Áo thun">Áo thun</option>
+                            <option value="Sơ mi">Sơ mi</option>
+                            <option value="Quần">Quần</option>
+                            <option value="Váy">Váy</option>
+                            <option value="Áo khoác">Áo khoác</option>
+                            <option value="Phụ kiện">Phụ kiện</option>
+                        </select>
+
+                        <select id="sizeFilter" class="filter-select">
+                            <option value="Tất cả">Tất cả</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+
+                    <select id="sortBy" class="filter-select">
+                        <option value="newest">Mới nhất</option>
+                        <option value="price-asc">Giá tăng dần</option>
+                        <option value="price-desc">Giá giảm dần</option>
+                        <option value="popular">Bán chạy</option>
+                    </select>
+                </div>
+
+                <div class="active-filters" id="activeFilters"></div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid"></div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>Không tìm thấy sản phẩm nào</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <h2 class="promo-title">Ưu đãi mùa hè lên đến 40%</h2>
+            <p class="promo-subtitle">Áp dụng cho toàn bộ bộ sưu tập mùa hè</p>
+            <button class="btn btn-light" onclick="scrollToProducts()">Săn sale ngay</button>
+        </div>
+    </section>
+
+    <!-- Lookbook -->
+    <section class="lookbook">
+        <div class="container">
+            <h2 class="section-title">Phong cách cảm hứng</h2>
+            <div class="lookbook-grid">
+                <div class="lookbook-card">
+                    <div class="lookbook-image">
+                        <img src="https://images.unsplash.com/photo-1762764919554-cfd608ffc1a0?w=600" alt="Minimal Daily">
+                    </div>
+                    <h3 class="lookbook-title">Minimal Daily</h3>
+                    <p class="lookbook-desc">Phong cách tối giản cho ngày thường</p>
+                </div>
+                <div class="lookbook-card">
+                    <div class="lookbook-image">
+                        <img src="https://images.unsplash.com/photo-1615984259571-4d4d1084abbd?w=600" alt="Streetwear">
+                    </div>
+                    <h3 class="lookbook-title">Streetwear</h3>
+                    <p class="lookbook-desc">Năng động và cá tính</p>
+                </div>
+                <div class="lookbook-card">
+                    <div class="lookbook-image">
+                        <img src="https://images.unsplash.com/photo-1772987301731-2a66c92c6475?w=600" alt="Office Casual">
+                    </div>
+                    <h3 class="lookbook-title">Office Casual</h3>
+                    <p class="lookbook-desc">Thanh lịch và chuyên nghiệp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <polyline points="1 20 1 14 7 14"></polyline>
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                    <p>Đổi trả trong 7 ngày</p>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <p>Thanh toán an toàn</p>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                    </svg>
+                    <p>Giao hàng toàn quốc</p>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <path d="M21 11h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2z"></path>
+                        <path d="M5 11V7a7 7 0 0 1 14 0v4"></path>
+                    </svg>
+                    <p>Hỗ trợ 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Nhận ưu đãi độc quyền</h2>
+                <p class="newsletter-subtitle">Đăng ký nhận tin để được cập nhật sản phẩm mới và ưu đãi đặc biệt</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" id="emailInput" placeholder="Email của bạn" class="newsletter-input" required>
+                    <button type="submit" class="btn btn-light">Đăng ký</button>
+                </form>
+                <p class="newsletter-privacy">Chúng tôi tôn trọng quyền riêng tư của bạn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">VIBEWEAR</h3>
+                    <p class="footer-text">Thời trang hiện đại cho phong cách sống năng động</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Hỗ trợ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Chính sách</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Theo dõi chúng tôi</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VIBEWEAR. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3 class="cart-title">Giỏ hàng (<span id="cartCountDrawer">0</span>)</h3>
+                <button class="close-btn" id="closeCartBtn">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="cart-items" id="cartItems"></div>
+
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <span>Tổng cộng:</span>
+                    <span class="cart-total-amount" id="cartTotal">0đ</span>
+                </div>
+                <button class="btn btn-primary btn-full">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
