@@ -147,6 +147,55 @@ const products = [
         colors: ['#FFFFFF', '#F5E6D3'],
         sizes: ['S', 'M', 'L', 'XL'],
         badge: 'Mới'
+    },
+    {
+        id: 13,
+        name: 'Túi Tote Canvas Minimal',
+        category: 'Phụ kiện',
+        gender: 'Unisex',
+        price: 259000,
+        salePrice: 219000,
+        image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600',
+        rating: 4.8,
+        colors: ['#F5E6D3', '#000000'],
+        sizes: ['One size'],
+        badge: 'Sale'
+    },
+    {
+        id: 14,
+        name: 'Nón Baseball Đen Basic',
+        category: 'Phụ kiện',
+        gender: 'Unisex',
+        price: 189000,
+        image: 'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=600',
+        rating: 4.6,
+        colors: ['#000000', '#FFFFFF', '#808080'],
+        sizes: ['One size'],
+        badge: 'Bán chạy'
+    },
+    {
+        id: 15,
+        name: 'Thắt Lưng Da Nâu Vintage',
+        category: 'Phụ kiện',
+        gender: 'Unisex',
+        price: 329000,
+        image: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=600',
+        rating: 4.7,
+        colors: ['#8B4513', '#000000'],
+        sizes: ['One size'],
+        badge: 'Mới'
+    },
+    {
+        id: 16,
+        name: 'Kính Mát Gọng Đen',
+        category: 'Phụ kiện',
+        gender: 'Unisex',
+        price: 279000,
+        image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600',
+        rating: 4.9,
+        colors: ['#000000', '#D4AF37'],
+        sizes: ['One size'],
+        badge: 'Mới'
     }
 ];
 
@@ -352,24 +401,27 @@ function sortProducts(products) {
 function createProductCard(product) {
     const badgeClass = product.badge === 'Sale' ? 'badge-sale' :
                        product.badge === 'Mới' ? 'badge-new' : 'badge-hot';
+    const detailUrl = `product-detail.html?id=${product.id}`;
 
     return `
         <div class="product-card">
             <div class="product-image-container">
-                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <a href="${detailUrl}">
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                </a>
                 ${product.badge ? `<span class="product-badge ${badgeClass}">${product.badge}</span>` : ''}
                 <div class="product-actions">
                     <button class="product-action-btn btn-add-cart" onclick="addToCart(${product.id})">
                         Thêm vào giỏ
                     </button>
-                    <button class="product-action-btn btn-quick-view" onclick="openQuickView(${product.id})">
-                        Xem nhanh
-                    </button>
+                    <a href="${detailUrl}" class="product-action-btn btn-quick-view product-detail-link">
+                        Chi tiết
+                    </a>
                 </div>
             </div>
             <div class="product-info">
                 <p class="product-category">${product.category}</p>
-                <h3 class="product-name">${product.name}</h3>
+                <h3 class="product-name"><a href="${detailUrl}">${product.name}</a></h3>
                 <div class="product-rating">
                     ${createStars(product.rating)}
                     <span class="rating-text">(${product.rating})</span>
