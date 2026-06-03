@@ -1,0 +1,234 @@
+/* Product Detail Page */
+.product-detail-page {
+    background: linear-gradient(135deg, #fff 0%, #f7f2ea 45%, #f9fafb 100%);
+    min-height: calc(100vh - 96px);
+    padding: 32px 0 64px;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
+.detail-layout {
+    display: grid;
+    gap: 32px;
+    align-items: start;
+}
+
+@media (min-width: 900px) {
+    .detail-layout {
+        grid-template-columns: 1.05fr 0.95fr;
+    }
+}
+
+.detail-gallery {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--color-bg);
+    box-shadow: 0 24px 60px rgba(17, 24, 39, 0.12);
+}
+
+.detail-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+}
+
+.detail-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.detail-info-panel {
+    background-color: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 18px 50px rgba(17, 24, 39, 0.08);
+}
+
+@media (min-width: 768px) {
+    .detail-info-panel {
+        padding: 40px;
+    }
+}
+
+.detail-category {
+    color: var(--color-accent);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.detail-title {
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    margin-bottom: 16px;
+}
+
+.detail-desc {
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+}
+
+.detail-rating {
+    display: inline-flex;
+    background-color: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #9a3412;
+    padding: 5.6px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.detail-price {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.detail-price-old {
+    color: var(--color-text-light);
+    text-decoration: line-through;
+    font-size: 18px;
+}
+
+.detail-price-current {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.detail-option {
+    margin-bottom: 24px;
+}
+
+.detail-option h3 {
+    font-size: 15.2px;
+    margin-bottom: 12px;
+}
+
+.detail-colors,
+.detail-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.detail-color {
+    width: 38.4px;
+    height: 38.4px;
+    border-radius: 9999px;
+    border: 2px solid var(--color-border);
+    box-shadow: inset 0 0 0 3px var(--color-bg);
+}
+
+.detail-color.active,
+.detail-size.active {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.detail-size {
+    min-width: 48px;
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    padding: 10.4px 16px;
+    background-color: var(--color-bg);
+    transition: var(--transition);
+}
+
+.detail-size.active {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.detail-quantity {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    overflow: hidden;
+    background-color: var(--color-bg);
+}
+
+.detail-quantity button,
+.detail-quantity span {
+    min-width: 48px;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.detail-quantity button:hover {
+    background-color: var(--color-bg-light);
+}
+
+.detail-add-btn {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    width: 100%;
+    border-radius: 9999px;
+    padding: 16px 32px;
+}
+
+.detail-add-btn:hover {
+    background-color: #374151;
+}
+
+.detail-note {
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.detail-extra {
+    display: grid;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+    .detail-extra {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.detail-extra-card,
+.detail-not-found {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.detail-extra-card h3 {
+    margin-bottom: 8px;
+}
+
+.detail-extra-card p {
+    color: var(--color-text-light);
+}
+

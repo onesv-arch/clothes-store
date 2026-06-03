@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIBEWEAR - Thời trang hiện đại</title>
-    <link rel="stylesheet" href="style.css">
+    <title>VIBEWEAR - Thời trang hin ại</title>
+    <link rel="stylesheet" href="css/co-ban.css">
+    <link rel="stylesheet" href="css/thanh-phan.css">
+    <link rel="stylesheet" href="css/trang-chu.css">
 </head>
 <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        Miễn phí vận chuyển cho đơn hàng từ 499.000đ
+        Min phí vận chuyn cho ơn hàng từ 499.000
     </div>
 
     <!-- Header -->
@@ -32,12 +34,13 @@
                     <h1 class="logo">VIBEWEAR</h1>
 
                     <nav class="nav-desktop">
-                        <a href="#home" class="nav-link">Trang chủ</a>
+                        <a href="index.html" class="nav-link">Trang chủ</a>
+                        <a href="about.html" class="nav-link">Gii thiu</a>
                         <a href="#men" class="nav-link">Nam</a>
                         <a href="#women" class="nav-link">Nữ</a>
-                        <a href="#accessories" class="nav-link">Phụ kiện</a>
-                        <a href="#collection" class="nav-link">Bộ sưu tập</a>
-                        <a href="#contact" class="nav-link">Liên hệ</a>
+                        <a href="#accessories" class="nav-link">Phụ kin</a>
+                        <a href="collections.html" class="nav-link">B sưu tập</a>
+                        <a href="contact.html" class="nav-link">Liên h</a>
                     </nav>
                 </div>
 
@@ -69,12 +72,13 @@
 
             <!-- Mobile Menu -->
             <nav class="nav-mobile" id="mobileMenu">
-                <a href="#home" class="nav-link">Trang chủ</a>
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="about.html" class="nav-link">Gii thiu</a>
                 <a href="#men" class="nav-link">Nam</a>
                 <a href="#women" class="nav-link">Nữ</a>
-                <a href="#accessories" class="nav-link">Phụ kiện</a>
-                <a href="#collection" class="nav-link">Bộ sưu tập</a>
-                <a href="#contact" class="nav-link">Liên hệ</a>
+                <a href="#accessories" class="nav-link">Phụ kin</a>
+                <a href="collections.html" class="nav-link">B sưu tập</a>
+                <a href="contact.html" class="nav-link">Liên h</a>
             </nav>
         </div>
     </header>
@@ -84,11 +88,11 @@
         <img src="https://images.unsplash.com/photo-1776273920158-510b171e936f?w=1200" alt="Hero" class="hero-image">
         <div class="hero-overlay">
             <div class="hero-content">
-                <h2 class="hero-title">Phong cách mới cho mỗi ngày</h2>
-                <p class="hero-subtitle">Khám phá bộ sưu tập thời trang hiện đại, tối giản và dễ phối đồ.</p>
+                <h2 class="hero-title">Phong cách mi cho mi ngày</h2>
+                <p class="hero-subtitle">Khám phá b sưu tập thời trang hin ại, ti giản và d phi .</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="scrollToProducts()">Mua ngay</button>
-                    <button class="btn btn-secondary" onclick="scrollToProducts()">Xem bộ sưu tập</button>
+                    <button class="btn btn-secondary" onclick="scrollToProducts()">Xem b sưu tập</button>
                 </div>
             </div>
         </div>
@@ -105,44 +109,56 @@
     <!-- Products Section -->
     <section class="products-section" id="products">
         <div class="container">
-            <h2 class="section-title">Sản phẩm mới</h2>
+            <h2 class="section-title">Sản phẩm mi</h2>
 
             <!-- Filters -->
             <div class="filters">
                 <div class="filter-row">
                     <div class="filter-group">
-                        <select id="genderFilter" class="filter-select">
-                            <option value="Tất cả">Tất cả</option>
-                            <option value="Nam">Nam</option>
-                            <option value="Nữ">Nữ</option>
-                            <option value="Unisex">Unisex</option>
-                        </select>
+                        <label class="filter-field" for="genderFilter">
+                            <span class="filter-label">Đi tượng</span>
+                            <select id="genderFilter" class="filter-select">
+                                <option value="Tất cả">Tất cả i tượng</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                <option value="Unisex">Unisex</option>
+                            </select>
+                        </label>
 
-                        <select id="categoryFilter" class="filter-select">
-                            <option value="Tất cả">Tất cả</option>
-                            <option value="Áo thun">Áo thun</option>
-                            <option value="Sơ mi">Sơ mi</option>
-                            <option value="Quần">Quần</option>
-                            <option value="Váy">Váy</option>
-                            <option value="Áo khoác">Áo khoác</option>
-                            <option value="Phụ kiện">Phụ kiện</option>
-                        </select>
+                        <label class="filter-field" for="categoryFilter">
+                            <span class="filter-label">Danh mục</span>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="Tất cả">Tất cả danh mục</option>
+                                <option value="Áo thun">Áo thun</option>
+                                <option value="Sơ mi">Sơ mi</option>
+                                <option value="Quần">Quần</option>
+                                <option value="Váy">Váy</option>
+                                <option value="Áo khoác">Áo khoác</option>
+                                <option value="Phụ kin">Phụ kin</option>
+                            </select>
+                        </label>
 
-                        <select id="sizeFilter" class="filter-select">
-                            <option value="Tất cả">Tất cả</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
+                        <label class="filter-field" for="sizeFilter">
+                            <span class="filter-label">Kích cỡ</span>
+                            <select id="sizeFilter" class="filter-select">
+                                <option value="Tất cả">Tất cả size</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </label>
                     </div>
 
-                    <select id="sortBy" class="filter-select">
-                        <option value="newest">Mới nhất</option>
-                        <option value="price-asc">Giá tăng dần</option>
-                        <option value="price-desc">Giá giảm dần</option>
-                        <option value="popular">Bán chạy</option>
-                    </select>
+                    <label class="filter-field" for="sortBy">
+                        <span class="filter-label">Sắp xếp</span>
+                        <select id="sortBy" class="filter-select">
+                            <option value="newest">Mi nhất</option>
+                            <option value="price-asc">Giá tng dần</option>
+                            <option value="price-desc">Giá giảm dần</option>
+                            <option value="popular">Bán chạy</option>
+                        </select>
+                    </label>
                 </div>
 
                 <div class="active-filters" id="activeFilters"></div>
@@ -160,9 +176,9 @@
     <!-- Promo Banner -->
     <section class="promo-banner">
         <div class="container">
-            <h2 class="promo-title">Ưu đãi mùa hè lên đến 40%</h2>
-            <p class="promo-subtitle">Áp dụng cho toàn bộ bộ sưu tập mùa hè</p>
-            <button class="btn btn-light" onclick="scrollToProducts()">Săn sale ngay</button>
+            <h2 class="promo-title">Ưu ãi mùa hè lên ến 40%</h2>
+            <p class="promo-subtitle">Áp dụng cho toàn b b sưu tập mùa hè</p>
+            <button class="btn btn-light" onclick="scrollToProducts()">Sn sale ngay</button>
         </div>
     </section>
 
@@ -176,21 +192,21 @@
                         <img src="https://images.unsplash.com/photo-1762764919554-cfd608ffc1a0?w=600" alt="Minimal Daily">
                     </div>
                     <h3 class="lookbook-title">Minimal Daily</h3>
-                    <p class="lookbook-desc">Phong cách tối giản cho ngày thường</p>
+                    <p class="lookbook-desc">Phong cách ti giản cho ngày thường</p>
                 </div>
                 <div class="lookbook-card">
                     <div class="lookbook-image">
                         <img src="https://images.unsplash.com/photo-1615984259571-4d4d1084abbd?w=600" alt="Streetwear">
                     </div>
                     <h3 class="lookbook-title">Streetwear</h3>
-                    <p class="lookbook-desc">Năng động và cá tính</p>
+                    <p class="lookbook-desc">Nng ng và cá tính</p>
                 </div>
                 <div class="lookbook-card">
                     <div class="lookbook-image">
                         <img src="https://images.unsplash.com/photo-1772987301731-2a66c92c6475?w=600" alt="Office Casual">
                     </div>
                     <h3 class="lookbook-title">Office Casual</h3>
-                    <p class="lookbook-desc">Thanh lịch và chuyên nghiệp</p>
+                    <p class="lookbook-desc">Thanh lch và chuyên nghip</p>
                 </div>
             </div>
         </div>
@@ -206,7 +222,7 @@
                         <polyline points="1 20 1 14 7 14"></polyline>
                         <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
                     </svg>
-                    <p>Đổi trả trong 7 ngày</p>
+                    <p>Đi trả trong 7 ngày</p>
                 </div>
                 <div class="trust-item">
                     <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -221,7 +237,7 @@
                         <circle cx="5.5" cy="18.5" r="2.5"></circle>
                         <circle cx="18.5" cy="18.5" r="2.5"></circle>
                     </svg>
-                    <p>Giao hàng toàn quốc</p>
+                    <p>Giao hàng toàn quc</p>
                 </div>
                 <div class="trust-item">
                     <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -229,7 +245,7 @@
                         <path d="M21 11h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2z"></path>
                         <path d="M5 11V7a7 7 0 0 1 14 0v4"></path>
                     </svg>
-                    <p>Hỗ trợ 24/7</p>
+                    <p>H trợ 24/7</p>
                 </div>
             </div>
         </div>
@@ -239,11 +255,11 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <h2 class="newsletter-title">Nhận ưu đãi độc quyền</h2>
-                <p class="newsletter-subtitle">Đăng ký nhận tin để được cập nhật sản phẩm mới và ưu đãi đặc biệt</p>
+                <h2 class="newsletter-title">Nhận ưu ãi c quyền</h2>
+                <p class="newsletter-subtitle">Đng ký nhận tin  ược cập nhật sản phẩm mi và ưu ãi ặc bit</p>
                 <form class="newsletter-form" id="newsletterForm">
                     <input type="email" id="emailInput" placeholder="Email của bạn" class="newsletter-input" required>
-                    <button type="submit" class="btn btn-light">Đăng ký</button>
+                    <button type="submit" class="btn btn-light">Đng ký</button>
                 </form>
                 <p class="newsletter-privacy">Chúng tôi tôn trọng quyền riêng tư của bạn</p>
             </div>
@@ -256,21 +272,21 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3 class="footer-title">VIBEWEAR</h3>
-                    <p class="footer-text">Thời trang hiện đại cho phong cách sống năng động</p>
+                    <p class="footer-text">Thời trang hin ại cho phong cách sng nng ng</p>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-heading">Hỗ trợ</h4>
+                    <h4 class="footer-heading">H trợ</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                        <li><a href="#">Hướng dẫn mua hàng</a></li>
-                        <li><a href="#">Hệ thống cửa hàng</a></li>
+                        <li><a href="about.html">Gii thiu</a></li>
+                        <li><a href="contact.html">Liên h</a></li>
+                        <li><a href="#">Hưng dẫn mua hàng</a></li>
+                        <li><a href="#">H thng cửa hàng</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Chính sách</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách i trả</a></li>
                         <li><a href="#">Chính sách bảo mật</a></li>
                         <li><a href="#">Điều khoản sử dụng</a></li>
                         <li><a href="#">Phương thức thanh toán</a></li>
@@ -300,7 +316,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VIBEWEAR. Tất cả quyền được bảo lưu.</p>
+                <p>&copy; 2026 VIBEWEAR. Tất cả quyền ược bảo lưu.</p>
             </div>
         </div>
     </footer>
@@ -323,10 +339,10 @@
 
             <div class="cart-footer" id="cartFooter" style="display: none;">
                 <div class="cart-total">
-                    <span>Tổng cộng:</span>
-                    <span class="cart-total-amount" id="cartTotal">0đ</span>
+                    <span>Tng cng:</span>
+                    <span class="cart-total-amount" id="cartTotal">0</span>
                 </div>
-                <button class="btn btn-primary btn-full">Thanh toán</button>
+                <a href="checkout.html" class="btn btn-primary btn-full cart-checkout-link">Thanh toán</a>
             </div>
         </div>
     </div>
@@ -348,3 +364,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
