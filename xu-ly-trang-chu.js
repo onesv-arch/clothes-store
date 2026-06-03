@@ -49,7 +49,8 @@ const products = [
         colors: ['#000000'],
         sizes: ['S', 'M', 'L'],
         badge: 'Sale'
-    },
+    },
+
     {
         id: 6,
         name: 'Blazer Trắng Công Sở',
@@ -61,7 +62,9 @@ const products = [
         colors: ['#FFFFFF', '#000000'],
         sizes: ['S', 'M', 'L', 'XL'],
         badge: 'Bán chạy'
-    },
+    },
+
+
     {
         id: 9,
         name: 'Áo Thun Trắng Phối Đồ',
@@ -73,7 +76,8 @@ const products = [
         colors: ['#FFFFFF', '#F5E6D3'],
         sizes: ['S', 'M', 'L', 'XL'],
         badge: 'Bán chạy'
-    },
+    },
+
     {
         id: 11,
         name: 'Blazer Đỏ Statement',
@@ -150,7 +154,7 @@ const products = [
     }
 ];
 
-// State
+
 let cart = [];
 let searchQuery = '';
 let selectedCategory = 'Tất cả';
@@ -158,7 +162,7 @@ let selectedGender = 'Tất cả';
 let selectedSize = 'Tất cả';
 let sortBy = 'newest';
 
-// DOM Elements
+//dom
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const searchInput = document.getElementById('searchInput');
@@ -170,14 +174,7 @@ const productGrid = document.getElementById('productGrid');
 const activeFiltersDiv = document.getElementById('activeFilters');
 const noResults = document.getElementById('noResults');
 const cartBtn = document.getElementById('cartBtn');
-const cartDrawer = document.getElementById('cartDrawer');
-const cartOverlay = document.getElementById('cartOverlay');
-const closeCartBtn = document.getElementById('closeCartBtn');
 const cartCount = document.getElementById('cartCount');
-const cartCountDrawer = document.getElementById('cartCountDrawer');
-const cartItems = document.getElementById('cartItems');
-const cartTotal = document.getElementById('cartTotal');
-const cartFooter = document.getElementById('cartFooter');
 const quickViewModal = document.getElementById('quickViewModal');
 const modalOverlay = document.getElementById('modalOverlay');
 const closeModalBtn = document.getElementById('closeModalBtn');
@@ -185,7 +182,7 @@ const modalBody = document.getElementById('modalBody');
 const newsletterForm = document.getElementById('newsletterForm');
 const emailInput = document.getElementById('emailInput');
 
-// Initialize
+
 function init() {
     loadCartFromStorage();
     renderProducts();
@@ -193,7 +190,6 @@ function init() {
     setupEventListeners();
 }
 
-// Event Listeners
 function setupEventListeners() {
     // Mobile menu
     mobileMenuBtn.addEventListener('click', toggleMobileMenu);
@@ -228,11 +224,6 @@ function setupEventListeners() {
         renderProducts();
     });
 
-    // Cart
-    cartBtn.addEventListener('click', openCart);
-    closeCartBtn.addEventListener('click', closeCart);
-    cartOverlay.addEventListener('click', closeCart);
-
     // Modal
     closeModalBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', closeModal);
@@ -240,7 +231,7 @@ function setupEventListeners() {
     // Newsletter
     newsletterForm.addEventListener('submit', handleNewsletterSubmit);
 
-    // Mobile menu links
+
     const mobileLinks = mobileMenu.querySelectorAll('.nav-link');
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -382,7 +373,7 @@ function formatPrice(price) {
     return price.toLocaleString('vi-VN') + 'đ';
 }
 
-// Active Filters
+// bo loc
 function updateActiveFilters() {
     const filters = [];
 
@@ -437,7 +428,7 @@ function addToCart(productId, size = 'M', color = null) {
 
     saveCartToStorage();
     updateCartUI();
-    openCart();
+    window.location.href = 'gio-hang.html';
 }
 
 function updateQuantity(productId, size, color, delta) {
@@ -462,68 +453,12 @@ function removeFromCart(productId, size, color) {
 
 function updateCartUI() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item) => sum + (item.salePrice || item.price) * item.quantity, 0);
 
     cartCount.textContent = totalItems;
-    cartCountDrawer.textContent = totalItems;
-    cartTotal.textContent = formatPrice(totalPrice);
-
-    if (cart.length === 0) {
-        cartItems.innerHTML = '<div class="cart-empty">Giỏ hàng trống</div>';
-        cartFooter.style.display = 'none';
-    } else {
-        cartItems.innerHTML = cart.map(item => createCartItem(item)).join('');
-        cartFooter.style.display = 'block';
-    }
 }
 
-function createCartItem(item) {
-    return `
-        <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-            <div class="cart-item-info">
-                <h4 class="cart-item-name">${item.name}</h4>
-                <p class="cart-item-details">Size: ${item.selectedSize}</p>
-                <div class="cart-item-details">
-                    <span class="cart-item-color" style="background-color: ${item.selectedColor}"></span>
-                </div>
-                <div class="cart-item-quantity">
-                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, '${item.selectedSize}', '${item.selectedColor}', -1)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                    </button>
-                    <span class="quantity-value">${item.quantity}</span>
-                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, '${item.selectedSize}', '${item.selectedColor}', 1)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                    </button>
-                    <button class="remove-btn" onclick="removeFromCart(${item.id}, '${item.selectedSize}', '${item.selectedColor}')">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3 6 5 6 21 6"></polyline>
-                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="cart-item-price">
-                ${formatPrice((item.salePrice || item.price) * item.quantity)}
-            </div>
-        </div>
-    `;
-}
 
-function openCart() {
-    cartDrawer.classList.add('active');
-}
 
-function closeCart() {
-    cartDrawer.classList.remove('active');
-}
-
-// LocalStorage
 function saveCartToStorage() {
     localStorage.setItem('vibewear-cart', JSON.stringify(cart));
 }
@@ -535,7 +470,7 @@ function loadCartFromStorage() {
     }
 }
 
-// Quick View Modal
+// xem nhanh
 function openQuickView(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -589,7 +524,7 @@ function addToCartFromModal(productId) {
     closeModal();
 }
 
-// Newsletter
+// dki nhan tin
 function handleNewsletterSubmit(e) {
     e.preventDefault();
     const email = emailInput.value;
@@ -600,7 +535,6 @@ function handleNewsletterSubmit(e) {
     }
 }
 
-// Scroll to Products
 function scrollToProducts() {
     const productsSection = document.getElementById('products');
     if (productsSection) {
@@ -608,7 +542,7 @@ function scrollToProducts() {
     }
 }
 
-// Initialize on DOM load
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {

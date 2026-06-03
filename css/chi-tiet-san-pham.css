@@ -198,12 +198,6 @@
     background-color: #374151;
 }
 
-.detail-note {
-    color: var(--color-text-light);
-    font-size: 14px;
-    margin-top: 16px;
-}
-
 .detail-extra {
     display: grid;
     gap: 16px;
@@ -231,4 +225,5 @@
 .detail-extra-card p {
     color: var(--color-text-light);
 }
+
 

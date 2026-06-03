@@ -91,7 +91,7 @@ if (contactForm) {
             return;
         }
 
-        result.textContent = 'Cảm ơn bạn! Nội dung đã được ghi nhận.';
+        result.textContent = 'Nội dung đã được ghi nhận.';
         result.className = 'form-message success';
         contactForm.reset();
     });
@@ -118,7 +118,7 @@ if (checkoutForm) {
 
         localStorage.removeItem('vibewear-cart');
         renderCheckoutSummary();
-        result.textContent = `Đặt hàng giả thành công! Phương thức đã chọn: ${payment.value}.`;
+        result.textContent = `Đặt hàng thành công! Phương thức đã chọn: ${payment.value}.`;
         result.className = 'form-message success';
         checkoutForm.reset();
     });

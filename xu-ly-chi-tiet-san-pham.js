@@ -48,7 +48,8 @@ const products = [
         colors: ['#000000'],
         sizes: ['S', 'M', 'L'],
         badge: 'Sale'
-    },
+    },
+
     {
         id: 6,
         name: 'Blazer Trắng Công Sở',
@@ -60,7 +61,9 @@ const products = [
         colors: ['#FFFFFF', '#000000'],
         sizes: ['S', 'M', 'L', 'XL'],
         badge: 'Bán chạy'
-    },
+    },
+
+
     {
         id: 9,
         name: 'Áo Thun Trắng Phối Đồ',
@@ -72,7 +75,8 @@ const products = [
         colors: ['#FFFFFF', '#F5E6D3'],
         sizes: ['S', 'M', 'L', 'XL'],
         badge: 'Bán chạy'
-    },
+    },
+
     {
         id: 11,
         name: 'Blazer Đỏ Statement',
@@ -195,8 +199,9 @@ function renderProduct() {
             <p class="detail-desc">Thiết kế hiện đại, dễ phối đồ và phù hợp cho nhiều hoạt động hằng ngày của sinh viên.</p>
             <div class="detail-rating">${product.rating} / 5 sao</div>
             <div class="detail-price">
-                ${product.salePrice ? `<span class="detail-price-old">${formatPrice(product.price)}</span>` : ''}
                 <span class="detail-price-current">${formatPrice(product.salePrice || product.price)}</span>
+                ${product.salePrice ? `<span class="detail-price-old">${formatPrice(product.price)}</span>` : ''}
+                
             </div>
             <div class="detail-option">
                 <h3>Chọn màu</h3>
@@ -206,6 +211,7 @@ function renderProduct() {
                             <button
                                 class="detail-color ${color === selectedColor ? 'active' : ''}"
                                 style="background-color:${color}"
+                                data-color="${color}"
                                 onclick="selectColor('${color}')"
                                 aria-label="Chọn màu ${color}">
                             </button>
@@ -234,7 +240,6 @@ function renderProduct() {
                 </div>
             </div>
             <button class="btn btn-primary detail-add-btn" onclick="addDetailToCart(${product.id})">Thêm vào giỏ hàng</button>
-            <p class="detail-note">Sản phẩm sẽ được lưu vào localStorage giống giỏ hàng ở trang chủ.</p>
         </div>
     `;
 }
@@ -243,7 +248,7 @@ function selectColor(color) {
     selectedColor = color;
     document
         .querySelectorAll('.detail-color')
-        .forEach(btn => btn.classList.toggle('active', btn.style.backgroundColor === hexToRgb(color)));
+        .forEach(btn => btn.classList.toggle('active', btn.dataset.color === color));
 }
 
 function selectSize(size) {
@@ -273,14 +278,6 @@ function addDetailToCart(productId) {
 
     localStorage.setItem('vibewear-cart', JSON.stringify(cart));
     alert('Đã thêm sản phẩm vào giỏ hàng!');
-}
-
-function hexToRgb(hex) {
-    const value = hex.replace('#', '');
-    const r = parseInt(value.substring(0, 2), 16);
-    const g = parseInt(value.substring(2, 4), 16);
-    const b = parseInt(value.substring(4, 6), 16);
-    return `rgb(${r}, ${g}, ${b})`;
 }
 
 renderProduct();
