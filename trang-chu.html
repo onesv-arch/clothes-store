@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIBEWEAR - Thời trang hin ại</title>
+    <title>VIBEWEAR - Thời trang hiện đại</title>
     <link rel="stylesheet" href="css/co-ban.css">
     <link rel="stylesheet" href="css/thanh-phan.css">
     <link rel="stylesheet" href="css/trang-chu.css">
@@ -11,7 +11,7 @@
 <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        Min phí vận chuyn cho ơn hàng từ 499.000
+        Miễn phí vận chuyển cho đơn hàng từ 499.000đ
     </div>
 
     <!-- Header -->
@@ -34,13 +34,10 @@
                     <h1 class="logo">VIBEWEAR</h1>
 
                     <nav class="nav-desktop">
-                        <a href="index.html" class="nav-link">Trang chủ</a>
-                        <a href="about.html" class="nav-link">Gii thiu</a>
-                        <a href="#men" class="nav-link">Nam</a>
-                        <a href="#women" class="nav-link">Nữ</a>
-                        <a href="#accessories" class="nav-link">Phụ kin</a>
-                        <a href="collections.html" class="nav-link">B sưu tập</a>
-                        <a href="contact.html" class="nav-link">Liên h</a>
+                        <a href="trang-chu.html" class="nav-link">Trang chủ</a>
+                        <a href="gioi-thieu.html" class="nav-link">Giới thiệu</a>
+                        <a href="trang-chu.html#products" class="nav-link">Sản phẩm</a>
+                        <a href="lien-he.html" class="nav-link">Liên hệ</a>
                     </nav>
                 </div>
 
@@ -72,13 +69,12 @@
 
             <!-- Mobile Menu -->
             <nav class="nav-mobile" id="mobileMenu">
-                <a href="index.html" class="nav-link">Trang chủ</a>
-                <a href="about.html" class="nav-link">Gii thiu</a>
+                <a href="trang-chu.html" class="nav-link">Trang chủ</a>
+                <a href="gioi-thieu.html" class="nav-link">Giới thiệu</a>
                 <a href="#men" class="nav-link">Nam</a>
                 <a href="#women" class="nav-link">Nữ</a>
-                <a href="#accessories" class="nav-link">Phụ kin</a>
-                <a href="collections.html" class="nav-link">B sưu tập</a>
-                <a href="contact.html" class="nav-link">Liên h</a>
+                <a href="#accessories" class="nav-link">Phụ kiện</a>
+                <a href="lien-he.html" class="nav-link">Liên hệ</a>
             </nav>
         </div>
     </header>
@@ -88,11 +84,11 @@
         <img src="https://images.unsplash.com/photo-1776273920158-510b171e936f?w=1200" alt="Hero" class="hero-image">
         <div class="hero-overlay">
             <div class="hero-content">
-                <h2 class="hero-title">Phong cách mi cho mi ngày</h2>
-                <p class="hero-subtitle">Khám phá b sưu tập thời trang hin ại, ti giản và d phi .</p>
+                <h2 class="hero-title">Phong cách mới cho mỗi ngày</h2>
+                <p class="hero-subtitle">Khám phá sản phẩm thời trang hiện đại, tối giản và dễ phối.</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="scrollToProducts()">Mua ngay</button>
-                    <button class="btn btn-secondary" onclick="scrollToProducts()">Xem b sưu tập</button>
+                    <button class="btn btn-secondary" onclick="scrollToProducts()">Xem sản phẩm</button>
                 </div>
             </div>
         </div>
@@ -102,23 +98,48 @@
     <section class="categories">
         <div class="container">
             <h2 class="section-title">Danh mục sản phẩm</h2>
-            <div class="category-grid" id="categoryGrid"></div>
+            <div class="category-grid" id="categoryGrid">
+                <div class="category-card" onclick="filterByCategory('Áo thun')">
+                    <img src="https://images.unsplash.com/photo-1630780565118-511258d74d08?w=400" alt="Áo thun">
+                    <div class="category-overlay"><div class="category-content"><p class="category-name">Áo thun</p><button class="category-btn">Khám phá</button></div></div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Sơ mi')">
+                    <img src="https://images.unsplash.com/photo-1630780564223-0aae7795126b?w=400" alt="Sơ mi">
+                    <div class="category-overlay"><div class="category-content"><p class="category-name">Sơ mi</p><button class="category-btn">Khám phá</button></div></div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Quần')">
+                    <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=400" alt="Quần">
+                    <div class="category-overlay"><div class="category-content"><p class="category-name">Quần</p><button class="category-btn">Khám phá</button></div></div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Váy')">
+                    <img src="https://images.unsplash.com/photo-1770918655078-600f74bc53c5?w=400" alt="Váy">
+                    <div class="category-overlay"><div class="category-content"><p class="category-name">Váy</p><button class="category-btn">Khám phá</button></div></div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Áo khoác')">
+                    <img src="https://images.unsplash.com/photo-1615984259571-4d4d1084abbd?w=400" alt="Áo khoác">
+                    <div class="category-overlay"><div class="category-content"><p class="category-name">Áo khoác</p><button class="category-btn">Khám phá</button></div></div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Phụ kiện')">
+                    <img src="https://images.unsplash.com/photo-1761896902115-49793a359daf?w=400" alt="Phụ kiện">
+                    <div class="category-overlay"><div class="category-content"><p class="category-name">Phụ kiện</p><button class="category-btn">Khám phá</button></div></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
     <section class="products-section" id="products">
         <div class="container">
-            <h2 class="section-title">Sản phẩm mi</h2>
+            <h2 class="section-title">Sản phẩm mới</h2>
 
             <!-- Filters -->
             <div class="filters">
                 <div class="filter-row">
                     <div class="filter-group">
                         <label class="filter-field" for="genderFilter">
-                            <span class="filter-label">Đi tượng</span>
+                            <span class="filter-label">Đối tượng</span>
                             <select id="genderFilter" class="filter-select">
-                                <option value="Tất cả">Tất cả i tượng</option>
+                                <option value="Tất cả">Tất cả đối tượng</option>
                                 <option value="Nam">Nam</option>
                                 <option value="Nữ">Nữ</option>
                                 <option value="Unisex">Unisex</option>
@@ -134,7 +155,7 @@
                                 <option value="Quần">Quần</option>
                                 <option value="Váy">Váy</option>
                                 <option value="Áo khoác">Áo khoác</option>
-                                <option value="Phụ kin">Phụ kin</option>
+                                <option value="Phụ kiện">Phụ kiện</option>
                             </select>
                         </label>
 
@@ -153,8 +174,8 @@
                     <label class="filter-field" for="sortBy">
                         <span class="filter-label">Sắp xếp</span>
                         <select id="sortBy" class="filter-select">
-                            <option value="newest">Mi nhất</option>
-                            <option value="price-asc">Giá tng dần</option>
+                            <option value="newest">Mới nhất</option>
+                            <option value="price-asc">Giá tăng dần</option>
                             <option value="price-desc">Giá giảm dần</option>
                             <option value="popular">Bán chạy</option>
                         </select>
@@ -176,43 +197,12 @@
     <!-- Promo Banner -->
     <section class="promo-banner">
         <div class="container">
-            <h2 class="promo-title">Ưu ãi mùa hè lên ến 40%</h2>
-            <p class="promo-subtitle">Áp dụng cho toàn b b sưu tập mùa hè</p>
-            <button class="btn btn-light" onclick="scrollToProducts()">Sn sale ngay</button>
+            <h2 class="promo-title">Ưu đãi mùa hè lên đến 40%</h2>
+            <p class="promo-subtitle">Áp dụng cho nhiều sản phẩm mùa hè</p>
+            <button class="btn btn-light" onclick="scrollToProducts()">Săn sale ngay</button>
         </div>
     </section>
-
-    <!-- Lookbook -->
-    <section class="lookbook">
-        <div class="container">
-            <h2 class="section-title">Phong cách cảm hứng</h2>
-            <div class="lookbook-grid">
-                <div class="lookbook-card">
-                    <div class="lookbook-image">
-                        <img src="https://images.unsplash.com/photo-1762764919554-cfd608ffc1a0?w=600" alt="Minimal Daily">
-                    </div>
-                    <h3 class="lookbook-title">Minimal Daily</h3>
-                    <p class="lookbook-desc">Phong cách ti giản cho ngày thường</p>
-                </div>
-                <div class="lookbook-card">
-                    <div class="lookbook-image">
-                        <img src="https://images.unsplash.com/photo-1615984259571-4d4d1084abbd?w=600" alt="Streetwear">
-                    </div>
-                    <h3 class="lookbook-title">Streetwear</h3>
-                    <p class="lookbook-desc">Nng ng và cá tính</p>
-                </div>
-                <div class="lookbook-card">
-                    <div class="lookbook-image">
-                        <img src="https://images.unsplash.com/photo-1772987301731-2a66c92c6475?w=600" alt="Office Casual">
-                    </div>
-                    <h3 class="lookbook-title">Office Casual</h3>
-                    <p class="lookbook-desc">Thanh lch và chuyên nghip</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Section -->
+<!-- Trust Section -->
     <section class="trust-section">
         <div class="container">
             <div class="trust-grid">
@@ -222,7 +212,7 @@
                         <polyline points="1 20 1 14 7 14"></polyline>
                         <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
                     </svg>
-                    <p>Đi trả trong 7 ngày</p>
+                    <p>Đổi trả trong 7 ngày</p>
                 </div>
                 <div class="trust-item">
                     <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -237,7 +227,7 @@
                         <circle cx="5.5" cy="18.5" r="2.5"></circle>
                         <circle cx="18.5" cy="18.5" r="2.5"></circle>
                     </svg>
-                    <p>Giao hàng toàn quc</p>
+                    <p>Giao hàng toàn quốc</p>
                 </div>
                 <div class="trust-item">
                     <svg class="trust-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -245,7 +235,7 @@
                         <path d="M21 11h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2z"></path>
                         <path d="M5 11V7a7 7 0 0 1 14 0v4"></path>
                     </svg>
-                    <p>H trợ 24/7</p>
+                    <p>Hỗ trợ 24/7</p>
                 </div>
             </div>
         </div>
@@ -255,11 +245,11 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <h2 class="newsletter-title">Nhận ưu ãi c quyền</h2>
-                <p class="newsletter-subtitle">Đng ký nhận tin  ược cập nhật sản phẩm mi và ưu ãi ặc bit</p>
+                <h2 class="newsletter-title">Nhận ưu đãi độc quyền</h2>
+                <p class="newsletter-subtitle">Đăng ký nhận tin để được cập nhật sản phẩm mới và ưu đãi đặc biệt</p>
                 <form class="newsletter-form" id="newsletterForm">
                     <input type="email" id="emailInput" placeholder="Email của bạn" class="newsletter-input" required>
-                    <button type="submit" class="btn btn-light">Đng ký</button>
+                    <button type="submit" class="btn btn-light">Đăng ký</button>
                 </form>
                 <p class="newsletter-privacy">Chúng tôi tôn trọng quyền riêng tư của bạn</p>
             </div>
@@ -272,21 +262,21 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3 class="footer-title">VIBEWEAR</h3>
-                    <p class="footer-text">Thời trang hin ại cho phong cách sng nng ng</p>
+                    <p class="footer-text">Thời trang hiện đại cho phong cách sống năng động</p>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-heading">H trợ</h4>
+                    <h4 class="footer-heading">Hỗ trợ</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">Gii thiu</a></li>
-                        <li><a href="contact.html">Liên h</a></li>
-                        <li><a href="#">Hưng dẫn mua hàng</a></li>
-                        <li><a href="#">H thng cửa hàng</a></li>
+                        <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                        <li><a href="lien-he.html">Liên hệ</a></li>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Hệ thống cửa hàng</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Chính sách</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Chính sách i trả</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
                         <li><a href="#">Chính sách bảo mật</a></li>
                         <li><a href="#">Điều khoản sử dụng</a></li>
                         <li><a href="#">Phương thức thanh toán</a></li>
@@ -316,7 +306,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VIBEWEAR. Tất cả quyền ược bảo lưu.</p>
+                <p>&copy; 2026 VIBEWEAR. Tất cả quyền được bảo lưu.</p>
             </div>
         </div>
     </footer>
@@ -339,10 +329,10 @@
 
             <div class="cart-footer" id="cartFooter" style="display: none;">
                 <div class="cart-total">
-                    <span>Tng cng:</span>
+                    <span>Tổng cộng:</span>
                     <span class="cart-total-amount" id="cartTotal">0</span>
                 </div>
-                <a href="checkout.html" class="btn btn-primary btn-full cart-checkout-link">Thanh toán</a>
+                <a href="thanh-toan.html" class="btn btn-primary btn-full cart-checkout-link">Thanh toán</a>
             </div>
         </div>
     </div>
@@ -361,7 +351,9 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="xu-ly-trang-chu.js"></script>
 </body>
 </html>
+
+
 

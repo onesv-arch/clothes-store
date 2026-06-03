@@ -36,8 +36,7 @@
     max-width: 672px;
 }
 
-.store-hero img,
-.collection-row img {
+.store-hero img {
     width: 100%;
     border-radius: 20px;
     object-fit: cover;
@@ -82,8 +81,7 @@
 .store-card,
 .store-form,
 .cart-page-summary,
-.cart-page-item,
-.collection-row {
+.cart-page-item {
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid var(--color-border);
     border-radius: 16px;
@@ -91,7 +89,6 @@
 }
 
 .store-card p,
-.collection-row p,
 .cart-page-item p {
     color: var(--color-text-light);
 }
@@ -99,6 +96,27 @@
 .store-form {
     display: grid;
     gap: 16px;
+}
+
+.contact-form-card {
+    min-height: 420px;
+}
+
+.form-heading {
+    display: grid;
+    gap: 6px;
+}
+
+.form-heading h2 {
+    margin-bottom: 0;
+}
+
+.form-field span {
+    color: var(--color-primary);
+}
+
+.contact-info-card {
+    align-self: start;
 }
 
 .form-block {
@@ -184,22 +202,9 @@
     font-size: 17.6px;
 }
 
-.collection-list,
 .cart-page-list {
     display: grid;
     gap: 16px;
-}
-
-.collection-row {
-    display: grid;
-    gap: 24px;
-    align-items: center;
-}
-
-@media (min-width: 768px) {
-    .collection-row {
-        grid-template-columns: 288px 1fr;
-    }
 }
 
 .cart-page-item {
@@ -237,4 +242,6 @@
 .form-message.error {
     color: #dc2626;
 }
+
+
 

@@ -27,7 +27,7 @@ function renderCartPage() {
 
     if (cart.length === 0) {
         list.innerHTML =
-            '<div class="store-card">Giỏ hàng đang trống. <a href="index.html#products">Quay lại mua sắm</a></div>';
+            '<div class="store-card">Giỏ hàng đang trống. <a href="trang-chu.html#products">Quay lại mua sắm</a></div>';
         total.textContent = '0đ';
         return;
     }
